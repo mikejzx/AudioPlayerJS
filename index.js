@@ -1,7 +1,7 @@
 
-const { app, BrowserWindow } = require('electron');
 const url = require('url');
 const path = require('path');
+const { dialog, app, BrowserWindow } = require('electron');
 
 let mainwnd;
 
@@ -19,4 +19,19 @@ app.on('ready', () => {
         app.exit();
         mainwnd = null;
     })
+
+    // Test dialog
+    console.log(dialog.showOpenDialog({
+        title: 'Open file',
+        properties: [
+            'openFile',
+            'multiSelections',
+        ],
+        filters: [
+            { name: 'MP3', extensions: ['mp3'] },
+            { name: 'Wave', extensions: ['wav'] },
+            { name: 'Ogg Vorbis', extensions: ['ogg']},
+            { name: 'VLC Playlist', extensions: ['xspf'] }
+        ]
+    }));
 });
