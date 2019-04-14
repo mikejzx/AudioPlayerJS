@@ -1,0 +1,34 @@
+
+/* Define global window properties */
+html {
+    background-color: #0a0a0a;
+}
+
+/* THe bottom control bar is where the main controls
+such as the play/pause buttons are and volume ctrls.*/
+#ctrl-bar-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 68px;
+    position: absolute;
+    background-color: #151515;
+    text-align: center;
+
+    /* Centre child elements */
+    display: flex;
+    align-items: center;
+}
+
+/* Container for bottom ctrl bar buttons */
+#btm_btn_container {
+    margin: auto;
+    width: 250px;
+    height: 30px;
+    margin: auto;
+}
+
+/* This class defines the buttons at the bottom control bar */
+.btn_btm_ctrl {
+    height: inherit;
+}

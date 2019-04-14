@@ -21,7 +21,7 @@ app.on('ready', () => {
     })
 
     // Test dialog
-    console.log(dialog.showOpenDialog({
+    /*dialog.showOpenDialog({
         title: 'Open file',
         properties: [
             'openFile',
@@ -33,5 +33,5 @@ app.on('ready', () => {
             { name: 'Ogg Vorbis', extensions: ['ogg']},
             { name: 'VLC Playlist', extensions: ['xspf'] }
         ]
-    }));
+    });*/
 });
