@@ -1,14 +1,31 @@
 
 var playing = false;
 
+const win = require('electron').remote.getCurrentWindow();
+
 // For window close button
-function onWindowClose() { console.log('window close'); }
+function onWindowClose() { 
+    console.log('window close'); 
+    win.close();
+}
 
 // For window restore button
-function onWindowRestore() { console.log('window restore'); }
+function onWindowRestore() { 
+    console.log('window restore'); 
+    
+    if (win.isMaximized()) {
+        win.unmaximize();
+    }
+    else {
+        win.maximize();
+    }
+}
 
 // For window minimise button
-function onWindowMinimise() { console.log('window minimise'); }
+function onWindowMinimise() { 
+    console.log('window minimise'); 
+    win.minimize();
+}
 
 // On click of 'previous' button
 function trackPrevious() {

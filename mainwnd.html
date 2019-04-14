@@ -4,8 +4,9 @@
         <meta charset='utf-8'/>
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="styles/_stylesheet_main.css"/>
-        <link rel="stylesheet" href="styles/styles-captionbar.css"/>
+        <link rel="stylesheet" href="./styles/_stylesheet_main.css"/>
+        <link rel="stylesheet" href="./styles/styles-captionbar.css"/>
+        <link rel="stylesheet" href="./styles/styles-toolbar.css"/>
 
         <!-- JavaScripts -->
         <script type="text/javascript" src="javascript/jsmain.js"></script>
@@ -14,7 +15,7 @@
     </head>
     <body>
         <!-- Caption bar -->
-        <div id="captionbar">
+        <header>
             <!-- Window control buttons -->
             <div class="btn_caption" id="btn-caption-close" onclick="onWindowClose()">
                 <div class="btn-click-circle">
@@ -34,7 +35,30 @@
         
             <!-- Be sure to change this to the title if the title changes ! -->
             <div id="captionbar-title">AudioPlayerJS</div>
-        </div>
+
+            <!-- Toolbar/menu -->
+            <div id="toolbar-container">
+                <!-- File menu -->
+                <div class="toolbar-string">
+                    <span>File</span>
+                </div>
+
+                <!-- Playback menu -->
+                <div class="toolbar-string">
+                    <span>Playback</span>
+                </div>
+
+                <!-- Debug menu -->
+                <div class="toolbar-string">
+                    <span>Debug</span>
+                </div>
+
+                <!-- Help menu -->
+                <div class="toolbar-string">
+                    <span>?</span>
+                </div>
+            </div>
+        </header>
 
         <!-- Main control bar (bottom) -->
         <div id="ctrl-bar-bottom">
@@ -45,5 +69,15 @@
                 <input type="submit" value="Next" class="btn_btm_ctrl" onclick="trackNext()"/>
             </div>
         </div>
+
+        <!-- Window Borders -->
+        <!-- Left -->
+        <div style="left: 0; bottom: 0; top: 0; width: 1px; background: var(--colour-border); position: absolute; z-index: 20;"></div>
+        <!-- Right -->
+        <div style="right: 0; bottom: 0; top: 0; width: 1px; background: var(--colour-border); position: absolute; z-index: 20;"></div>
+        <!-- Bottom -->
+        <div style="left: 0; bottom: 0; right: 0; height: 1px; background: var(--colour-border); position: absolute; z-index: 20;"></div>
+        <!-- Top -->
+        <div style="left: 0; top: 0; right: 0; height: 1px; background: var(--colour-border); position: absolute; z-index: 20;"></div>
     </body>
 </html>

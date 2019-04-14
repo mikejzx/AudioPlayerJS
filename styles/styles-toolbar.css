@@ -1,0 +1,33 @@
+
+/* Contains each element of the toolbar */
+#toolbar-container {
+    position: absolute;
+    height: inherit;
+    width: fit-content;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Toolbar element */
+.toolbar-string {
+    transition: background-color 200ms;
+    background-color: rgba(255, 255, 255, 0.05);
+    width: fit-content;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+/* string contained in the element */
+.toolbar-string span {
+    margin-left: 10px;
+    margin-right: 10px;    vertical-align: middle;
+    pointer-events: none;
+}
+
+/* Hover on toolbar element */
+.toolbar-string:hover {
+    transition: background-color 200ms;
+    background-color: rgba(0, 0, 0, 0.4);
+}

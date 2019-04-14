@@ -8,7 +8,8 @@ let mainwnd;
 app.on('ready', () => {
     mainwnd = new BrowserWindow({
         width: 600,
-        height: 400
+        height: 400,
+        frame: false
     });
     mainwnd.loadURL(url.format({
         pathname: path.join(__dirname, 'mainwnd.html'),

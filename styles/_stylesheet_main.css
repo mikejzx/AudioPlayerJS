@@ -4,6 +4,7 @@ html {
     /* Dark theme */
     --colour-fg: #151515;
     --colour-bg: #0a0a0a;
+    --colour-border: #000;
     --text-colour: #dddddd;
 
     /* Light theme (Not 100% supported yet) 
@@ -15,6 +16,7 @@ html {
 
     /* Global text properties. */
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
     color: var(--text-colour);
     text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.2);
 }

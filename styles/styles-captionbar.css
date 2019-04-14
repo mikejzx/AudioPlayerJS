@@ -1,13 +1,17 @@
 
 /* The title bar at the top of the window */
-/* Design based off of the KDE caption bar. */
-#captionbar {
+/* Design based off of the KDE caption bar, sorta
+    mixed with the XFCE buttons */
+header {
     background-color: var(--colour-fg);
     height: 30px;
     left: 0;
     right: 0;
     top: 0;
     position: absolute;
+
+    /* Allow client to drag window */
+    -webkit-app-region: drag;
 
     display: flex;
     flex-direction: row-reverse;
@@ -21,6 +25,9 @@
 /* Caption bar title, centred...*/
 #captionbar-title {
     margin: auto;
+    pointer-events: none;
+    /* 18px(wid) * 3 + 5px(right-margin) * 3 */
+    padding-left: 69px;
 }
 
 /* Buttons on the caption bar */
@@ -31,6 +38,8 @@
     margin-bottom: 5px;
     margin-right: 5px;
     z-index: 10;
+
+    -webkit-app-region: none;
 }
 
 /* Close button */
