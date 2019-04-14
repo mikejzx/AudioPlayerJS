@@ -19,7 +19,9 @@ app.on('ready', () => {
     mainwnd.on('close', () => {
         app.exit();
         mainwnd = null;
-    })
+    });
+
+    mainwnd.openDevTools();
 
     // Test dialog
     /*dialog.showOpenDialog({
@@ -34,5 +36,18 @@ app.on('ready', () => {
             { name: 'Ogg Vorbis', extensions: ['ogg']},
             { name: 'VLC Playlist', extensions: ['xspf'] }
         ]
+    }, function(filePaths, bookmarks) {
+        // Only 1 file
+        if (filePaths.length == 1) {
+            
+        }
+        // More than one file
+        else if (filePaths > 1) {
+            
+        }
+        // Nothing selected
+        else {
+            
+        }
     });*/
 });
