@@ -4,20 +4,45 @@
         <meta charset='utf-8'/>
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="styles/stylesheet_main.css"/>
+        <link rel="stylesheet" href="styles/_stylesheet_main.css"/>
+        <link rel="stylesheet" href="styles/styles-captionbar.css"/>
 
         <!-- JavaScripts -->
+        <script type="text/javascript" src="javascript/jsmain.js"></script>
 
         <title>AudioPlayerJS</title>
     </head>
     <body>
+        <!-- Caption bar -->
+        <div id="captionbar">
+            <!-- Window control buttons -->
+            <div class="btn_caption" id="btn-caption-close" onclick="onWindowClose()">
+                <div class="btn-click-circle">
+                    <div class="btn-caption-icon" style="background-image: url('./img/btn-close.png')"></div>
+                </div>
+            </div>
+            <div class="btn_caption btn_caption_alt" onclick="onWindowRestore()">
+                <div class="btn-click-circle">
+                    <div class="btn-caption-icon" style="background-image: url('./img/btn-max.png')"></div>
+                </div>
+            </div>
+            <div class="btn_caption btn_caption_alt" onclick="onWindowMinimise()">
+                <div class="btn-click-circle">
+                    <div class="btn-caption-icon" style="background-image: url('./img/btn-min.png')"></div>
+                </div>
+            </div>
+        
+            <!-- Be sure to change this to the title if the title changes ! -->
+            <div id="captionbar-title">AudioPlayerJS</div>
+        </div>
+
         <!-- Main control bar (bottom) -->
         <div id="ctrl-bar-bottom">
             <div id="btm_btn_container">
                 <!-- TODO: GIVE THESE BUTTONS IMAGES ----------------------------->
-                <input type="submit" value="Prev" class="btn_btm_ctrl"/>
-                <input type="submit" value="Play" class="btn_btm_ctrl"/>
-                <input type="submit" value="Next" class="btn_btm_ctrl"/>
+                <input type="submit" value="Prev" class="btn_btm_ctrl" onclick="trackPrevious()"/>
+                <input type="submit" value="Play" class="btn_btm_ctrl" onclick="trackPlayPause()" id="btn_playpause"/>
+                <input type="submit" value="Next" class="btn_btm_ctrl" onclick="trackNext()"/>
             </div>
         </div>
     </body>

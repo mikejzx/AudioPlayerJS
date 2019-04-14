@@ -1,7 +1,22 @@
 
 /* Define global window properties */
 html {
-    background-color: #0a0a0a;
+    /* Dark theme */
+    --colour-fg: #151515;
+    --colour-bg: #0a0a0a;
+    --text-colour: #dddddd;
+
+    /* Light theme (Not 100% supported yet) 
+    --colour-fg: #cccccc;
+    --colour-bg: #bbbbbb;
+    --text-colour: #444444;*/
+
+    background-color: var(--colour-bg);
+
+    /* Global text properties. */
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-colour);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.2);
 }
 
 /* THe bottom control bar is where the main controls
@@ -12,7 +27,7 @@ such as the play/pause buttons are and volume ctrls.*/
     bottom: 0;
     height: 68px;
     position: absolute;
-    background-color: #151515;
+    background-color: var(--colour-fg);
     text-align: center;
 
     /* Centre child elements */
