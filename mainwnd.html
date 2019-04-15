@@ -53,9 +53,9 @@
                     </div>
                     <div class="dropdown-list">
                         <ul>
-                            <li>Open...</li>
+                            <li onclick="openFileDialog ()">Open...</li>
                             <li>Save as playlist</li>
-                            <li>Exit</li>
+                            <li onclick="onWindowClose()">Exit</li>
                         </ul>
                     </div>
                 </div>
@@ -73,13 +73,27 @@
                 </div>
 
                 <!-- Debug menu -->
-                <div class="toolbar-string dropdown">
-                    <span>Debug</span>
+                <div class="dropdown">
+                    <div class="toolbar-string dropdown-btn">
+                        <span>Debug</span>
+                    </div>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li onclick="openDevTools()">Developer tools</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Help menu -->
-                <div class="toolbar-string dropdown">
-                    <span>?</span>
+                <div class="dropdown">
+                    <div class="toolbar-string dropdown-btn">
+                        <span>?</span>
+                    </div>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li>About</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <script type="text/javascript">

@@ -21,6 +21,8 @@ app.on('ready', () => {
         mainwnd = null;
     });
 
+    mainwnd.openDevTools();
+
     const mainmenu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(mainmenu);
 });
