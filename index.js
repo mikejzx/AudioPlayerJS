@@ -1,7 +1,7 @@
 
 const url = require('url');
 const path = require('path');
-const { dialog, app, BrowserWindow } = require('electron');
+const { Menu, app, BrowserWindow } = require('electron');
 
 let mainwnd;
 
@@ -21,33 +21,61 @@ app.on('ready', () => {
         mainwnd = null;
     });
 
-    mainwnd.openDevTools();
-
-    // Test dialog
-    /*dialog.showOpenDialog({
-        title: 'Open file',
-        properties: [
-            'openFile',
-            'multiSelections',
-        ],
-        filters: [
-            { name: 'MP3', extensions: ['mp3'] },
-            { name: 'Wave', extensions: ['wav'] },
-            { name: 'Ogg Vorbis', extensions: ['ogg']},
-            { name: 'VLC Playlist', extensions: ['xspf'] }
-        ]
-    }, function(filePaths, bookmarks) {
-        // Only 1 file
-        if (filePaths.length == 1) {
-            
-        }
-        // More than one file
-        else if (filePaths > 1) {
-            
-        }
-        // Nothing selected
-        else {
-            
-        }
-    });*/
+    const mainmenu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(mainmenu);
 });
+
+const menuTemplate = [
+    // File menu
+    {
+        label: "File",
+        submenu: [
+            // File>Open
+            {
+                label: "Open...",
+                click() {
+
+                },
+            },
+            // File>Quit
+            {
+                label: "Quit",
+                accelerator: process.platform == 'darwin' ? "Command + Q" : "Ctrl + Q",
+                click() {
+                    app.quit();
+                },
+            }
+        ]
+    },
+    // Playback menu
+    {
+        label: "Playback",
+        submenu: [
+            // Play
+            {
+                label: "Play",
+                click() {},
+            }
+        ]
+    },
+    // Debug
+    {
+        label: "Debug",
+        submenu: [
+            // Debug>Dev tools
+            {
+                label: "Developer tools",
+                click() {
+                    mainwnd.openDevTools();
+                },
+            }
+        ]
+    },
+    // Help
+    {
+        label: "?",
+        //submenu: []
+    }
+    // Still W.I.P
+    // Not high-priority since it's a linux-only thing.
+];

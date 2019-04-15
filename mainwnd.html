@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./styles/_stylesheet_main.css"/>
         <link rel="stylesheet" href="./styles/styles-captionbar.css"/>
         <link rel="stylesheet" href="./styles/styles-toolbar.css"/>
+        <link rel="stylesheet" href="./styles/styles-dropdowns.css"/>
 
         <!-- Main audio player -->
         <!-- Src is set from audiohandler.js -->
@@ -15,6 +16,7 @@
 
         <!-- JavaScripts -->
         <script type="text/javascript" src="javascript/audiohandler.js"></script>
+        <script type="text/javascript" src="javascript/dropdowns.js"></script>
         <script type="text/javascript" src="javascript/jsmain.js"></script>
 
         <title>AudioPlayerJS</title>
@@ -45,25 +47,44 @@
             <!-- Toolbar/menu -->
             <div id="toolbar-container">
                 <!-- File menu -->
-                <div class="toolbar-string">
-                    <span>File</span>
+                <div class="dropdown">
+                    <div class="toolbar-string dropdown-btn">
+                        <span>File</span>
+                    </div>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li>Open...</li>
+                            <li>Save as playlist</li>
+                            <li>Exit</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Playback menu -->
-                <div class="toolbar-string">
-                    <span>Playback</span>
+                <div class="dropdown">
+                    <div class="toolbar-string dropdown-btn">
+                        <span>Playback</span>
+                    </div>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li>Start</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Debug menu -->
-                <div class="toolbar-string">
+                <div class="toolbar-string dropdown">
                     <span>Debug</span>
                 </div>
 
                 <!-- Help menu -->
-                <div class="toolbar-string">
+                <div class="toolbar-string dropdown">
                     <span>?</span>
                 </div>
             </div>
+            <script type="text/javascript">
+                initialiseDropdowns ();
+            </script>
         </header>
 
         <!-- Main control bar (bottom) -->
