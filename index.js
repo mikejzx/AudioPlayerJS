@@ -7,8 +7,10 @@ let mainwnd;
 
 app.on('ready', () => {
     mainwnd = new BrowserWindow({
-        width: 600,
-        height: 400,
+        width: 512,
+        height: 384,
+        minWidth: 400,
+        minHeight: 400,
         frame: false,
         // Fixed missing shadow on Linux
         transparent: false,

@@ -52,47 +52,29 @@ header {
 
 #btn-caption-close:hover {
     transition: background-color 200ms;
-    background-color: #ff2244;
+    background-color: #ff6c82;
 }
 
 .btn_caption_alt {
     transition: background-color 200ms;
-    background: rgba(64, 64, 64, 0.0);
+    background: rgba(200, 200, 200, 0.0);
     border-radius: 50%;
-    overflow: hidden;
+}
+
+.btn_caption_alt:active {
+    transition: background-color 200ms;
+    background: rgba(150, 250, 150, 1.0);
 }
 
 .btn_caption_alt:hover {
     transition: background-color 200ms;
-    background: rgba(64, 64, 64, 1.0);
+    background: rgba(200, 200, 200, 1.0);
 }
 
 /* Invert icon on hover */
-.btn_caption_alt:hover > .btn-click-circle > .btn-caption-icon {
+.btn_caption_alt:hover > .btn-caption-icon {
     transition: filter 200ms;
     filter: invert(100%);
-}
-
-/* Decorative 'click circle' that appears on click 
-Some source from https://codepen.io/finnhvman/pen/jLXKJw*/
-.btn-click-circle {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    transition: background 500ms;
-    z-index: 12;
-}
-
-.btn_caption_alt:hover > .btn-click-circle {
-    background: transparent radial-gradient(circle, transparent 1%, 
-    rgba(64, 64, 64, 1.0) 1%) center/15000%;
-}
-
-/* Change colour on click */
-.btn_caption_alt:active > .btn-click-circle {
-    transition: background 0s;
-    background-color: #ff00ff;
-    background-size: 100%;
 }
 
 /* For button icons */

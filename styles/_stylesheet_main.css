@@ -31,14 +31,67 @@ such as the play/pause buttons are and volume ctrls.*/
     left: 0;
     right: 0;
     bottom: 0;
-    height: 68px;
+    height: 80px;
     position: absolute;
-    background-color: var(--colour-fg);
+    /*background-color: var(--colour-fg);*/
     text-align: center;
 
     /* Centre child elements */
     display: flex;
     align-items: center;
+
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+}
+
+/* Contains a blurred cover */
+#ctrl-bar-bottom-cover {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+
+    /* 'Acrylic' features */
+    overflow: hidden;
+}
+
+/* Pseudo-style for blur effect ('acrylic')*/
+#ctrl-bar-bottom-cover::before {
+    filter: blur(12px);
+    opacity: 1.0;
+    z-index: 1;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 98%;
+    background-color: var(--colour-fg); /* Clear colour */
+    /*background-image: url("../img/album-default.png");*/
+    /*background-image: url("https://avatars1.githubusercontent.com/u/42143005"); For testing*/
+
+    -webkit-transition: background-image 2.0s;
+    transition: background-image 2.0s;
+}
+
+/* Another pseudo-style. This adds noise */
+#ctrl-bar-bottom-cover::after {
+    content: "";
+    position: absolute;
+    opacity: 0.5;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    background: var(--colour-fg);
+    border: 1px solid #fff;
+    background-image: var(--noise);
 }
 
 /* Container for bottom ctrl bar buttons */

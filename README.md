@@ -7,4 +7,4 @@ as this app would be more portable and versatile due to the cross-platform natur
 
 # Build requirements:
 * Electron framework: `npm install electron --save`
-* node-id3: `npm install node-id3`
+* jsmediatags (for ID3 reading): `npm install jsmediatags --save`

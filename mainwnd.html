@@ -4,6 +4,7 @@
         <meta charset='utf-8'/>
 
         <!-- Stylesheets -->
+        <link rel="stylesheet" href="./styles/styles-precompute.css"/>
         <link rel="stylesheet" href="./styles/_stylesheet_main.css"/>
         <link rel="stylesheet" href="./styles/styles-captionbar.css"/>
         <link rel="stylesheet" href="./styles/styles-toolbar.css"/>
@@ -15,6 +16,7 @@
         <audio id="audio_player"></audio>
 
         <!-- JavaScripts -->
+        <script type="text/javascript" src="./javascript/lib/pseudostyles.js"></script>
         <script type="text/javascript" src="./javascript/audiohandler.js"></script>
         <script type="text/javascript" src="./javascript/dropdowns.js"></script>
         <script type="text/javascript" src="./javascript/jsmain.js"></script>
@@ -26,19 +28,13 @@
         <header>
             <!-- Window control buttons -->
             <div class="btn_caption" id="btn-caption-close" onclick="onWindowClose()">
-                <div class="btn-click-circle">
-                    <div class="btn-caption-icon" style="background-image: url('./img/btn-close.png')"></div>
-                </div>
+                <div class="btn-caption-icon" style="background-image: url('./img/btn-close.png')"></div>
             </div>
             <div class="btn_caption btn_caption_alt" onclick="onWindowRestore()">
-                <div class="btn-click-circle">
-                    <div class="btn-caption-icon" style="background-image: url('./img/btn-max.png')"></div>
-                </div>
+                <div class="btn-caption-icon" style="background-image: url('./img/btn-max.png')"></div>
             </div>
             <div class="btn_caption btn_caption_alt" onclick="onWindowMinimise()">
-                <div class="btn-click-circle">
-                    <div class="btn-caption-icon" style="background-image: url('./img/btn-min.png')"></div>
-                </div>
+                <div class="btn-caption-icon" style="background-image: url('./img/btn-min.png')"></div>
             </div>
         
             <!-- Be sure to change this to the title if the title changes ! -->
@@ -103,6 +99,7 @@
 
         <!-- Main control bar (bottom) -->
         <div id="ctrl-bar-bottom">
+            <div id="ctrl-bar-bottom-cover" style="z-index: -1;"></div>
             <div id="track-info">
                 <a id="track-title">Track title</a><br>
                 <a id="track-artist">Artist name</a>
