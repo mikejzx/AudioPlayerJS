@@ -53,3 +53,10 @@ such as the play/pause buttons are and volume ctrls.*/
 .btn_btm_ctrl {
     height: inherit;
 }
+
+/* The label for the currently playing song*/
+#track-info {
+    position: absolute;
+    margin-left: 30px;
+    text-align: left;
+}

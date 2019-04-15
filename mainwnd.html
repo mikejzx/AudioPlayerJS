@@ -15,9 +15,9 @@
         <audio id="audio_player"></audio>
 
         <!-- JavaScripts -->
-        <script type="text/javascript" src="javascript/audiohandler.js"></script>
-        <script type="text/javascript" src="javascript/dropdowns.js"></script>
-        <script type="text/javascript" src="javascript/jsmain.js"></script>
+        <script type="text/javascript" src="./javascript/audiohandler.js"></script>
+        <script type="text/javascript" src="./javascript/dropdowns.js"></script>
+        <script type="text/javascript" src="./javascript/jsmain.js"></script>
 
         <title>AudioPlayerJS</title>
     </head>
@@ -103,6 +103,10 @@
 
         <!-- Main control bar (bottom) -->
         <div id="ctrl-bar-bottom">
+            <div id="track-info">
+                <a id="track-title">Track title</a><br>
+                <a id="track-artist">Artist name</a>
+            </div>
             <div id="btm_btn_container">
                 <!-- TODO: GIVE THESE BUTTONS IMAGES ----------------------------->
                 <input type="submit" value="Prev" class="btn_btm_ctrl" onclick="trackPrevious()"/>

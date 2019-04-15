@@ -26,6 +26,7 @@ header {
 #captionbar-title {
     margin: auto;
     pointer-events: none;
+    text-align: center;
     /* 18px(wid) * 3 + 5px(right-margin) * 3 */
     padding-left: 69px;
 }

@@ -9,7 +9,16 @@ app.on('ready', () => {
     mainwnd = new BrowserWindow({
         width: 600,
         height: 400,
-        frame: false
+        frame: false,
+        // Fixed missing shadow on Linux
+        transparent: false,
+        hasShadow: true,
+
+        // Apparently this is unsafe (supposably RCE-prone)
+        // but it's very much needed
+        webPreferences: {
+            nodeIntegration: true
+        }
     });
     mainwnd.loadURL(url.format({
         pathname: path.join(__dirname, 'mainwnd.html'),
