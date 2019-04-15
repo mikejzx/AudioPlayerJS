@@ -19,7 +19,7 @@ function audioOpen (fileName) {
                 title: tags.title == null ? "Untitled" : tags.title,
                 artist: tags.artist == null ? "Unknown Artist" : tags.artist,
                 album: tags.album == null ? "Unknown Album" : tags.album,
-                image: tags.picture, // TODO: Set this to a default if there's no image
+                image: tags.picture,
                 year: tags.year
                 // TODO: song length, etc
             });
@@ -33,7 +33,7 @@ function audioOpen (fileName) {
                 title: "Untitled",
                 artist: "Unknown Artist",
                 album: "Unknown Album",
-                image: null, // TODO: Set this to a default image
+                image: null,
                 year: 0
                 // TODO: song length, etc
             });
@@ -73,18 +73,22 @@ function currentSongUpdate() {
     document.getElementById("track-title").innerHTML = cur.title;
     document.getElementById("track-artist").innerHTML = "by " + cur.artist;
 
+    // Set player background image to the cover art.
     var img = cur.image;
     if (img) {
+        // More memory efficient than concatenating a string
         var b64str = [];
         for (var i = 0; i < img.data.length; i++) {
             b64str.push(String.fromCharCode(img.data[i]));
         }
-        var b64 = "url(data:" + img.format + ";base64," + window.btoa(b64str.join("") + ") !important");
-        console.log("Setting ctrl bar bottom cover bg image to " + b64);
+        var b64 = "url(data:" + img.format + ";base64," + window.btoa(b64str.join("")) + ") !important";
         document.getElementById("ctrl-bar-bottom-cover").pseudoStyle("before", "background-image", b64);
     }
     else {
         console.log("null image");
+        // Set player bg to nothing
+        // url(./img/albumart-default.png) for actual cover
+        document.getElementById("ctrl-bar-bottom-cover").pseudoStyle("before", "background-image", "none");
     }
 }
 
