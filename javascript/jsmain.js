@@ -33,11 +33,6 @@ function openDevTools() {
     win.openDevTools();
 }
 
-// On click of 'previous' button
-function trackPrevious() {
-    console.log("trackprevious");
-}
-
 // On click of the play/pause button
 function trackPlayPause() {
     playing ^= true;
@@ -55,9 +50,30 @@ function trackPlayPause() {
     document.getElementById('btn_playpause').setAttribute('value', state);
 }
 
+// On click of 'previous' button
+function trackPrevious() {
+    var i = queueIdx - 1;
+    if (i > -1) {
+        queueIdxChange(i);
+        console.log("prev track");
+    }
+    else {
+        console.log("no previous songs");
+    }
+}
+
 // On click of the 'next track' button
 function trackNext() {
-    console.log("track next");
+    var i = queueIdx + 1;
+    if (i < queue.length) {
+        queueIdxChange(i);
+        console.log("next track");
+    }
+    else {
+        console.log("no more songs in queue");
+
+        // TODO: Restart if 'repeat queue'
+    }
 }
 
 function openFileDialog () {

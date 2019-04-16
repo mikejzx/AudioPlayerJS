@@ -67,11 +67,10 @@
 }
 
 .dropdown > .dropdown-list > ul li {
-    padding: .25em 3em;
+    padding: 5px;
     margin: .25em;
-    margin-left: 20px;
-    margin-right: 0;
-    width: 100%;
+    width: 120px;
+    height: fit-content;
     cursor: pointer;
     transition: background 0.35s ease;
     text-align: left;

@@ -1,11 +1,18 @@
 
 /* Define global window properties */
 html {
+    /* Common variables */
+    --captionbar-height: 30px;
+    --ctrlbar-height: 80px;
+    --tracklist-density: 30px;
+
     /* Dark theme */
     --colour-fg: #151515;
     --colour-bg: #0a0a0a;
     --colour-border: #000;
     --text-colour: #dddddd;
+    --colour-tracklist-item: #111111;
+    --colour-tracklist-item-border: #000;
 
     /* Light theme (Not 100% supported yet) 
     --colour-fg: #cccccc;
@@ -31,7 +38,7 @@ such as the play/pause buttons are and volume ctrls.*/
     left: 0;
     right: 0;
     bottom: 0;
-    height: 80px;
+    height: var(--ctrlbar-height);
     position: absolute;
     /*background-color: var(--colour-fg);*/
     text-align: center;
@@ -72,6 +79,7 @@ such as the play/pause buttons are and volume ctrls.*/
     background-position: 50% 50%;
     background-size: 98%;
     background-color: var(--colour-fg); /* Clear colour */
+    background-image: none;
     /*background-image: url("../img/album-default.png");*/
     /*background-image: url("https://avatars1.githubusercontent.com/u/42143005"); For testing*/
 

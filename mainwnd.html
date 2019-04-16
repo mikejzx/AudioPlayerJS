@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./styles/styles-captionbar.css"/>
         <link rel="stylesheet" href="./styles/styles-toolbar.css"/>
         <link rel="stylesheet" href="./styles/styles-dropdowns.css"/>
+        <link rel="stylesheet" href="./styles/styles-queue.css"/>
 
         <!-- Main audio player -->
         <!-- Src is set from audiohandler.js -->
@@ -26,6 +27,9 @@
     <body>
         <!-- Caption bar -->
         <header>
+            <!-- Draggable caption bar content -->
+            <div id="drag-handle"></div>
+
             <!-- Window control buttons -->
             <div class="btn_caption" id="btn-caption-close" onclick="onWindowClose()">
                 <div class="btn-caption-icon" style="background-image: url('./img/btn-close.png')"></div>
@@ -40,7 +44,9 @@
             <!-- Be sure to change this to the title if the title changes ! -->
             <div id="captionbar-title">AudioPlayerJS</div>
 
-            <!-- Toolbar/menu -->
+            <!-- Toolbar/menu
+                If this gets larger in future, possibly move down below the caption bar.
+            -->
             <div id="toolbar-container">
                 <!-- File menu -->
                 <div class="dropdown">
@@ -96,6 +102,15 @@
                 initialiseDropdowns ();
             </script>
         </header>
+
+        <!-- Displays all tracks currently in the queue -->
+        <div class="tracklist" id="tracklist-main">
+            <!-- Test item -->
+            <div class="tracklist-item">
+                Untitled - Unknown Artist
+                <!-- W.I.P. ALBUM ART, ETC, DIVIDE SECTIONS -->
+            </div>
+        </div>
 
         <!-- Main control bar (bottom) -->
         <div id="ctrl-bar-bottom">
